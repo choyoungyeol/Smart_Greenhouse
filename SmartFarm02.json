@@ -1,0 +1,1216 @@
+[
+    {
+        "id": "4884066ad8f4ff55",
+        "type": "tab",
+        "label": "플로우 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "17d38dbc40273cff",
+        "type": "serial in",
+        "z": "4884066ad8f4ff55",
+        "name": "",
+        "serial": "0ea2fcaaccbfa388",
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "25bf144b233349d8",
+                "1edeac16d922168d",
+                "ba86c503db24ab41",
+                "64e77e42c675432a",
+                "613b842f44738ab6",
+                "d164af1dbd8f11c5",
+                "b4b82363930a9abd",
+                "d1347890d987ce73",
+                "4843b621014092da"
+            ]
+        ]
+    },
+    {
+        "id": "25bf144b233349d8",
+        "type": "function",
+        "z": "4884066ad8f4ff55",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar Ea = parseFloat(output[5]);\nvar msg = {payload:Ea};\nreturn [msg];\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 320,
+        "wires": [
+            [
+                "2aa8e8e46af93153",
+                "2b1e929979504a7f"
+            ]
+        ]
+    },
+    {
+        "id": "2aa8e8e46af93153",
+        "type": "ui_gauge",
+        "z": "4884066ad8f4ff55",
+        "name": "",
+        "group": "2738c935a6342b95",
+        "order": 38,
+        "width": 6,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Light",
+        "label": "Lux",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 510,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "1edeac16d922168d",
+        "type": "function",
+        "z": "4884066ad8f4ff55",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar WC = parseFloat(output[4]);\nvar msg = {payload:WC};\nreturn [msg];\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 220,
+        "wires": [
+            [
+                "caf870029b46138d",
+                "3b77d67d7c3c1e7e"
+            ]
+        ]
+    },
+    {
+        "id": "caf870029b46138d",
+        "type": "ui_gauge",
+        "z": "4884066ad8f4ff55",
+        "name": "",
+        "group": "2738c935a6342b95",
+        "order": 26,
+        "width": 6,
+        "height": 5,
+        "gtype": "wave",
+        "title": "Water Content",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 540,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "ecdc94033fce8b5a",
+        "type": "ui_gauge",
+        "z": "4884066ad8f4ff55",
+        "name": "",
+        "group": "2738c935a6342b95",
+        "order": 2,
+        "width": 6,
+        "height": 5,
+        "gtype": "compass",
+        "title": "Temperature",
+        "label": "oC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 530,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "ba86c503db24ab41",
+        "type": "function",
+        "z": "4884066ad8f4ff55",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar RH = parseFloat(output[1]);\nvar msg = {payload:RH};\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 120,
+        "wires": [
+            [
+                "a4d00bf0505b761e",
+                "348b06d7fd41fdb4"
+            ]
+        ]
+    },
+    {
+        "id": "a4d00bf0505b761e",
+        "type": "ui_gauge",
+        "z": "4884066ad8f4ff55",
+        "name": "",
+        "group": "2738c935a6342b95",
+        "order": 14,
+        "width": 6,
+        "height": 5,
+        "gtype": "wave",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 520,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "f2c54b6916c81b97",
+        "type": "serial out",
+        "z": "4884066ad8f4ff55",
+        "name": "",
+        "serial": "0ea2fcaaccbfa388",
+        "x": 966.2812805175781,
+        "y": 516.5651655197144,
+        "wires": []
+    },
+    {
+        "id": "fb0c7613d9ca80cb",
+        "type": "ui_switch",
+        "z": "4884066ad8f4ff55",
+        "name": "",
+        "label": "Light (광)",
+        "tooltip": "",
+        "group": "2738c935a6342b95",
+        "order": 5,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "a",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "b",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 755.2897720336914,
+        "y": 467.411826133728,
+        "wires": [
+            [
+                "f2c54b6916c81b97"
+            ]
+        ]
+    },
+    {
+        "id": "d0fb1da4385c517d",
+        "type": "ui_switch",
+        "z": "4884066ad8f4ff55",
+        "name": "",
+        "label": "Automation (자동유무)",
+        "tooltip": "",
+        "group": "2738c935a6342b95",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "payload",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "x",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "y",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 723.2871246337891,
+        "y": 411.4997549057007,
+        "wires": [
+            [
+                "f2c54b6916c81b97"
+            ]
+        ]
+    },
+    {
+        "id": "fe3e5d92bdcc514e",
+        "type": "ui_switch",
+        "z": "4884066ad8f4ff55",
+        "name": "",
+        "label": "Pump (펌프)",
+        "tooltip": "",
+        "group": "2738c935a6342b95",
+        "order": 9,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "c",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "d",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 745.284065246582,
+        "y": 521.4913578033447,
+        "wires": [
+            [
+                "f2c54b6916c81b97"
+            ]
+        ]
+    },
+    {
+        "id": "16e0cd7b4b4ce5a8",
+        "type": "ui_switch",
+        "z": "4884066ad8f4ff55",
+        "name": "",
+        "label": "Windows (창문)",
+        "tooltip": "",
+        "group": "2738c935a6342b95",
+        "order": 7,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "e",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "f",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 737.2813034057617,
+        "y": 577.4913129806519,
+        "wires": [
+            [
+                "f2c54b6916c81b97"
+            ]
+        ]
+    },
+    {
+        "id": "840de0c026915b62",
+        "type": "ui_switch",
+        "z": "4884066ad8f4ff55",
+        "name": "",
+        "label": "Fan (환기팬)",
+        "tooltip": "",
+        "group": "2738c935a6342b95",
+        "order": 11,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "g",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "h",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 740.292610168457,
+        "y": 635.4970932006836,
+        "wires": [
+            [
+                "f2c54b6916c81b97"
+            ]
+        ]
+    },
+    {
+        "id": "64e77e42c675432a",
+        "type": "function",
+        "z": "4884066ad8f4ff55",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar Auto = parseFloat(output[11]);\nvar msg = {payload:Auto};\n\nif(msg.payload == 1){\n    msg.payload = 'x';\n} \nelse {\n    msg.payload = 'y';\n}\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 352.01422119140625,
+        "y": 410.00566482543945,
+        "wires": [
+            [
+                "d0fb1da4385c517d"
+            ]
+        ]
+    },
+    {
+        "id": "613b842f44738ab6",
+        "type": "function",
+        "z": "4884066ad8f4ff55",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar LightValue = parseFloat(output[10]);\nvar msg = {payload:LightValue};\n\nif(msg.payload == 1){\n    msg.payload = 'a';\n} \nelse {\n    msg.payload = 'b';\n}\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 349.01422119140625,
+        "y": 464.00565338134766,
+        "wires": [
+            [
+                "fb0c7613d9ca80cb"
+            ]
+        ]
+    },
+    {
+        "id": "d164af1dbd8f11c5",
+        "type": "function",
+        "z": "4884066ad8f4ff55",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar FanValue = parseFloat(output[8]);\nvar msg = {payload:FanValue};\n\nif(msg.payload == 1){\n    msg.payload = 'e';\n} \nelse {\n    msg.payload = 'f';\n}\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 357.0142364501953,
+        "y": 632.0056858062744,
+        "wires": [
+            [
+                "840de0c026915b62"
+            ]
+        ]
+    },
+    {
+        "id": "b4b82363930a9abd",
+        "type": "function",
+        "z": "4884066ad8f4ff55",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar PumpValue = parseFloat(output[6]);\nvar msg = {payload:PumpValue};\n\nif(msg.payload == 1){\n    msg.payload = 'c';\n} \nelse {\n    msg.payload = 'd';\n}\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 353.2869110107422,
+        "y": 524.8352127075195,
+        "wires": [
+            [
+                "fe3e5d92bdcc514e"
+            ]
+        ]
+    },
+    {
+        "id": "d1347890d987ce73",
+        "type": "function",
+        "z": "4884066ad8f4ff55",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar ServoValue = parseFloat(output[7]);\nvar msg = {payload:ServoValue};\n\nif(msg.payload == 1){\n    msg.payload = 'g';\n} \nelse {\n    msg.payload = 'h';\n}\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 353.01422119140625,
+        "y": 577.0056762695312,
+        "wires": [
+            [
+                "16e0cd7b4b4ce5a8"
+            ]
+        ]
+    },
+    {
+        "id": "2b1e929979504a7f",
+        "type": "ui_chart",
+        "z": "4884066ad8f4ff55",
+        "name": "",
+        "group": "2738c935a6342b95",
+        "order": 39,
+        "width": 10,
+        "height": 5,
+        "label": "Light",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 510,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3b77d67d7c3c1e7e",
+        "type": "ui_chart",
+        "z": "4884066ad8f4ff55",
+        "name": "",
+        "group": "2738c935a6342b95",
+        "order": 27,
+        "width": 10,
+        "height": 5,
+        "label": "Water Content",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 540,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4118608aa4fd5cde",
+        "type": "ui_chart",
+        "z": "4884066ad8f4ff55",
+        "name": "",
+        "group": "2738c935a6342b95",
+        "order": 3,
+        "width": 10,
+        "height": 5,
+        "label": "Temperature",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 530,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "348b06d7fd41fdb4",
+        "type": "ui_chart",
+        "z": "4884066ad8f4ff55",
+        "name": "",
+        "group": "2738c935a6342b95",
+        "order": 15,
+        "width": 10,
+        "height": 5,
+        "label": "Humidity",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 520,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4843b621014092da",
+        "type": "function",
+        "z": "4884066ad8f4ff55",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar temp = parseFloat(output[0]);\nvar msg = {payload:temp};\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 20,
+        "wires": [
+            [
+                "ecdc94033fce8b5a",
+                "4118608aa4fd5cde"
+            ]
+        ]
+    },
+    {
+        "id": "6fb19c4ae4af8726",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "b77ded9d1d746205",
+        "order": 8,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "352b099f3a760459",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "b77ded9d1d746205",
+        "order": 11,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "eff15b0b9ce57fc9",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "b77ded9d1d746205",
+        "order": 12,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "c4c2263230d6180e",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "b77ded9d1d746205",
+        "order": 13,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "08225c8dbe32b670",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "b77ded9d1d746205",
+        "order": 14,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "a2ac950df06ad37b",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "b77ded9d1d746205",
+        "order": 15,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "926fff8596942827",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "b77ded9d1d746205",
+        "order": 18,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "3b5617cc2ce742ef",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "b77ded9d1d746205",
+        "order": 19,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "2cd9cdb40308cbb8",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "b77ded9d1d746205",
+        "order": 20,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "87d514da1efd4881",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "b77ded9d1d746205",
+        "order": 21,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "8b7ca86d5d7b9f6c",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "b77ded9d1d746205",
+        "order": 22,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "09a4068aafeca0b0",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "b77ded9d1d746205",
+        "order": 25,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "ff65a57a0f281d7b",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "b77ded9d1d746205",
+        "order": 26,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "9893051270059de7",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "b77ded9d1d746205",
+        "order": 27,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "f241f7250298f662",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "b77ded9d1d746205",
+        "order": 28,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "dbe3860d4d3d40c9",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 4,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "b3058afd4a0741bf",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 6,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "fdbe8bc9a41d4da7",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 8,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "ad8fb9caac3b1a8d",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 10,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "8e0cd1b7fa162d0a",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 12,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "5f12486d9d85b201",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 13,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "dff473a2ee81470b",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 16,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "aae697217c443b6c",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 17,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "15e3cf34b1f69401",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 18,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "8167fb02444b3de4",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 19,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "3c47ef1f73485973",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 20,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "854d3038fd19b7c8",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 21,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "c307e8e81a26767d",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 22,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "fb35fdf773f0e070",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 23,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "2be4c9f7366ff113",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 24,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "a7c72bb70ff48a4f",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 25,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "23768364f72702bd",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 28,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "aad8f931b1407b3a",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 29,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "7795a0416de2cab8",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 30,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "a11217d2abe0a993",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 31,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "ae8cb41fe4ca9110",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 32,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "5996984c9bd12b89",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 33,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "1e3a9e94cdc11bdf",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 34,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "2c7ae2b5e9d34f31",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 35,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "335b54ee65f0f1bd",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 36,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "2c5cb6f9480c9ba3",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 37,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "4a4fd858c533dc79",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 40,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "2453363399fd4485",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 41,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "5fa494b24119e659",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 42,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "5562d69ca50a62a9",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 43,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "f0ec6437948bb930",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 44,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "4a948b76bf4a9260",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 45,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "9a31afbd2853768f",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 46,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "3bfafd769991d3d5",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 47,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "d7544b62db4a41c4",
+        "type": "ui_spacer",
+        "z": "4884066ad8f4ff55",
+        "name": "spacer",
+        "group": "2738c935a6342b95",
+        "order": 48,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "0ea2fcaaccbfa388",
+        "type": "serial-port",
+        "serialport": "COM13",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "2738c935a6342b95",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "fadef5634ec1892e",
+        "order": 1,
+        "disp": false,
+        "width": 30,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b77ded9d1d746205",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": 22
+    },
+    {
+        "id": "fadef5634ec1892e",
+        "type": "ui_tab",
+        "name": "Tab 3",
+        "icon": "dashboard",
+        "order": 3
+    }
+]
