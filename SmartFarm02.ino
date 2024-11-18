@@ -406,6 +406,7 @@ void loop() {
     }
 
     if (c == 'g') {
+      Windows_value = 1;
       RSW.write(60);
       delay(1000);
       LSW.write(120);
@@ -416,6 +417,7 @@ void loop() {
       delay(1000);
     }
     if (c == 'h') {
+      Windows_value = 0;
       RSW.write(0);
       delay(1000);
       LSW.write(180);
@@ -426,7 +428,7 @@ void loop() {
       delay(1000);
     }
   }
-
+  Auto = Auto;
   Serial.print(temp);
   Serial.print(", ");
   Serial.print(humi);
@@ -447,7 +449,34 @@ void loop() {
   Serial.print(", ");
   Serial.print(Fan_out_value);
   Serial.print(", ");
-  Serial.println(Light_value);
+  Serial.print(Light_value);
+  Serial.print(", ");
+  Serial.println(Auto);
+
+  Serial3.print(temp);
+  Serial3.print(", ");
+  Serial3.print(humi);
+  Serial3.print(", ");
+  Serial3.print(AH);
+  Serial3.print(", ");
+  Serial3.print(VPD);
+  Serial3.print(", ");
+  Serial3.print(Water);
+  Serial3.print(", ");
+  Serial3.print(lux);
+  Serial3.print(", ");
+  Serial3.print(Pump_value);
+  Serial3.print(", ");
+  Serial3.print(Windows_value);
+  Serial3.print(", ");
+  Serial3.print(Fan_in_value);
+  Serial3.print(", ");
+  Serial3.print(Fan_out_value);
+  Serial3.print(", ");
+  Serial3.print(Light_value);
+  Serial3.print(", ");
+  Serial3.println(Auto);
+
 
   //  Serial.print("{\"temp\":");
   //  Serial.print(temp);
