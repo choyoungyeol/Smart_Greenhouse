@@ -1,0 +1,529 @@
+[
+    {
+        "id": "a0162065df69413e",
+        "type": "tab",
+        "label": "플로우 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "9714ca558b4cf731",
+        "type": "serial in",
+        "z": "a0162065df69413e",
+        "name": "",
+        "serial": "90c2d770290e3da8",
+        "x": 159.28691864013672,
+        "y": 214.67895317077637,
+        "wires": [
+            [
+                "cd7ec4bcadad891c",
+                "633c6a7a85a70b63",
+                "b27ee3ee71272c27",
+                "461c1e81ad625db4",
+                "23023eac619325b4",
+                "c6a986cda13dad01",
+                "59bfd049e34894e9",
+                "2db9d98f11071dba",
+                "64c8f56dca4aefe8"
+            ]
+        ]
+    },
+    {
+        "id": "cd7ec4bcadad891c",
+        "type": "function",
+        "z": "a0162065df69413e",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar Root = parseFloat(output[1]);\nvar msg = {payload:Root};\nreturn [msg];\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 100,
+        "wires": [
+            [
+                "33cfd2b0de7e24e7"
+            ]
+        ]
+    },
+    {
+        "id": "33cfd2b0de7e24e7",
+        "type": "ui_gauge",
+        "z": "a0162065df69413e",
+        "name": "",
+        "group": "a76c012c55eb1cfc",
+        "order": 2,
+        "width": 6,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Root-zone Temperature",
+        "label": "oC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 581.2926406860352,
+        "y": 98.83804702758789,
+        "wires": []
+    },
+    {
+        "id": "633c6a7a85a70b63",
+        "type": "function",
+        "z": "a0162065df69413e",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar Temp = parseFloat(output[2]);\nvar msg = {payload:Temp};\nreturn [msg];\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350.01424407958984,
+        "y": 182.00566864013672,
+        "wires": [
+            [
+                "e05bd6c937a6c7c8"
+            ]
+        ]
+    },
+    {
+        "id": "b27ee3ee71272c27",
+        "type": "function",
+        "z": "a0162065df69413e",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar humi = parseFloat(output[3]);\nvar msg = {payload:humi};\nreturn [msg];\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 356.0142364501953,
+        "y": 261.00566482543945,
+        "wires": [
+            [
+                "944e3e96be950fca"
+            ]
+        ]
+    },
+    {
+        "id": "e05bd6c937a6c7c8",
+        "type": "ui_gauge",
+        "z": "a0162065df69413e",
+        "name": "",
+        "group": "a76c012c55eb1cfc",
+        "order": 3,
+        "width": 6,
+        "height": 5,
+        "gtype": "wave",
+        "title": "Temperature",
+        "label": "oC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 524.2840728759766,
+        "y": 181.3835096359253,
+        "wires": []
+    },
+    {
+        "id": "944e3e96be950fca",
+        "type": "ui_gauge",
+        "z": "a0162065df69413e",
+        "name": "",
+        "group": "a76c012c55eb1cfc",
+        "order": 8,
+        "width": 6,
+        "height": 5,
+        "gtype": "donut",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 523.2869415283203,
+        "y": 261.37495613098145,
+        "wires": []
+    },
+    {
+        "id": "461c1e81ad625db4",
+        "type": "function",
+        "z": "a0162065df69413e",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar RH = parseFloat(output[4]);\nvar msg = {payload:RH};\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 353.2840805053711,
+        "y": 337.826696395874,
+        "wires": [
+            [
+                "172ecca5998caa96"
+            ]
+        ]
+    },
+    {
+        "id": "172ecca5998caa96",
+        "type": "ui_gauge",
+        "z": "a0162065df69413e",
+        "name": "",
+        "group": "a76c012c55eb1cfc",
+        "order": 10,
+        "width": 6,
+        "height": 5,
+        "gtype": "wave",
+        "title": "Dew-point Temperature",
+        "label": "oC",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "30",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 576.286937713623,
+        "y": 338.6562099456787,
+        "wires": []
+    },
+    {
+        "id": "c29c9d185e6bd9a7",
+        "type": "serial out",
+        "z": "a0162065df69413e",
+        "name": "",
+        "serial": "90c2d770290e3da8",
+        "x": 1070,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "40ba8bedc773ac16",
+        "type": "ui_switch",
+        "z": "a0162065df69413e",
+        "name": "",
+        "label": "Light (광)",
+        "tooltip": "",
+        "group": "a76c012c55eb1cfc",
+        "order": 5,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "payload",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "c",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "d",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 760,
+        "y": 520,
+        "wires": [
+            [
+                "c29c9d185e6bd9a7"
+            ]
+        ]
+    },
+    {
+        "id": "2596dbe8b770b20f",
+        "type": "ui_switch",
+        "z": "a0162065df69413e",
+        "name": "",
+        "label": "Automation (자동유무)",
+        "tooltip": "",
+        "group": "a76c012c55eb1cfc",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "payload",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "x",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "y",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 800,
+        "y": 580,
+        "wires": [
+            [
+                "c29c9d185e6bd9a7"
+            ]
+        ]
+    },
+    {
+        "id": "ae50cbdcdce478ca",
+        "type": "ui_switch",
+        "z": "a0162065df69413e",
+        "name": "",
+        "label": "Pump (펌프)",
+        "tooltip": "",
+        "group": "a76c012c55eb1cfc",
+        "order": 6,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "payload",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "e",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "f",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 770,
+        "y": 400,
+        "wires": [
+            [
+                "c29c9d185e6bd9a7"
+            ]
+        ]
+    },
+    {
+        "id": "1dfd2ddc2e563b73",
+        "type": "ui_switch",
+        "z": "a0162065df69413e",
+        "name": "",
+        "label": "Fan (환기팬)",
+        "tooltip": "",
+        "group": "a76c012c55eb1cfc",
+        "order": 4,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "payload",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "a",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "b",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 770,
+        "y": 460,
+        "wires": [
+            [
+                "c29c9d185e6bd9a7"
+            ]
+        ]
+    },
+    {
+        "id": "23023eac619325b4",
+        "type": "function",
+        "z": "a0162065df69413e",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar pF = parseFloat(output[0]);\nvar msg = {payload:pF};\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 20,
+        "wires": [
+            [
+                "b095bdc294195da6"
+            ]
+        ]
+    },
+    {
+        "id": "b095bdc294195da6",
+        "type": "ui_gauge",
+        "z": "a0162065df69413e",
+        "name": "",
+        "group": "a76c012c55eb1cfc",
+        "order": 9,
+        "width": 6,
+        "height": 5,
+        "gtype": "wave",
+        "title": "pF",
+        "label": "kPa",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "7",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 510,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "c6a986cda13dad01",
+        "type": "function",
+        "z": "a0162065df69413e",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar Auto = parseFloat(output[8]);\nvar msg = {payload:Auto};\n\nif(msg.payload == 1){\n    msg.payload = 'x';\n} \nelse {\n    msg.payload = 'y';\n}\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 580,
+        "wires": [
+            [
+                "2596dbe8b770b20f"
+            ]
+        ]
+    },
+    {
+        "id": "59bfd049e34894e9",
+        "type": "function",
+        "z": "a0162065df69413e",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar FanValue = parseFloat(output[6]);\nvar msg = {payload:FanValue};\n\nif(msg.payload == 1){\n    msg.payload = 'a';\n} \nelse {\n    msg.payload = 'b';\n}\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 460,
+        "wires": [
+            [
+                "1dfd2ddc2e563b73"
+            ]
+        ]
+    },
+    {
+        "id": "2db9d98f11071dba",
+        "type": "function",
+        "z": "a0162065df69413e",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar LightValue = parseFloat(output[7]);\nvar msg = {payload:LightValue};\n\nif(msg.payload == 1){\n    msg.payload = 'c';\n} \nelse {\n    msg.payload = 'd';\n}\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 520,
+        "wires": [
+            [
+                "40ba8bedc773ac16"
+            ]
+        ]
+    },
+    {
+        "id": "64c8f56dca4aefe8",
+        "type": "function",
+        "z": "a0162065df69413e",
+        "name": "",
+        "func": "var output = msg.payload.split(\",\");\nvar PumpValue = parseFloat(output[5]);\nvar msg = {payload:PumpValue};\n\nif(msg.payload == 1){\n    msg.payload = 'e';\n} \nelse {\n    msg.payload = 'f';\n}\nreturn [msg];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 400,
+        "wires": [
+            [
+                "ae50cbdcdce478ca"
+            ]
+        ]
+    },
+    {
+        "id": "b79907faa2b486ab",
+        "type": "ui_spacer",
+        "z": "a0162065df69413e",
+        "name": "spacer",
+        "group": "a76c012c55eb1cfc",
+        "order": 7,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "90c2d770290e3da8",
+        "type": "serial-port",
+        "serialport": "COM7",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "a76c012c55eb1cfc",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "a63f44f3531dcf2c",
+        "order": 1,
+        "disp": true,
+        "width": 18
+    },
+    {
+        "id": "a63f44f3531dcf2c",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
